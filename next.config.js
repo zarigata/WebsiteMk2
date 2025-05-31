@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
+const githubUsername = 'zarigata';
 const repository = 'WebsiteMk2'; // Your repository name
 const assetPrefix = isProd ? `/${repository}/` : '';
 const basePath = isProd ? `/${repository}` : '';
@@ -25,7 +26,7 @@ const nextConfig = {
   // Environment variables
   env: {
     SITE_URL: isProd 
-      ? `https://yourusername.github.io/${repository}` 
+      ? `https://${githubUsername}.github.io/${repository}` 
       : 'http://localhost:3000',
     BASE_PATH: isProd ? `/${repository}` : '',
     CONTACT_EMAIL: 'info@catchy.sa',
@@ -36,7 +37,7 @@ const nextConfig = {
   publicRuntimeConfig: {
     basePath: isProd ? `/${repository}` : '',
     siteUrl: isProd 
-      ? `https://yourusername.github.io/${repository}` 
+      ? `https://${githubUsername}.github.io/${repository}` 
       : 'http://localhost:3000',
   },
   
@@ -44,7 +45,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_BASE_PATH: isProd ? `/${repository}` : '',
     NEXT_PUBLIC_SITE_URL: isProd 
-      ? `https://yourusername.github.io/${repository}` 
+      ? `https://${githubUsername}.github.io/${repository}` 
       : 'http://localhost:3000',
   },
   
@@ -90,6 +91,22 @@ const nextConfig = {
 // Configuration for next-sitemap
 const withSitemap = require('next-sitemap');
 const sitemapConfig = {
+  siteUrl: `https://${githubUsername}.github.io/${repository}`,
+  generateRobotsTxt: true,
+  outDir: 'out',
+  exclude: ['/server-sitemap.xml'], // <= exclude here
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+    additionalSitemaps: [
+      `https://${githubUsername}.github.io/${repository}/sitemap.xml`,
+      `https://${githubUsername}.github.io/${repository}/server-sitemap.xml`,
+    ],
+  },
   siteUrl: process.env.SITE_URL || 'https://yourusername.github.io/catchy-website',
   generateRobotsTxt: true,
   generateIndexSitemap: true,

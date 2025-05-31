@@ -42,6 +42,71 @@ A modern, responsive website for Catchy, a digital marketing agency based in Sau
 
 4. **Open [http://localhost:3000](http://localhost:3000)** in your browser to see the result.
 
+## Deployment to GitHub Pages
+
+### Prerequisites
+
+- A GitHub account
+- The repository must be named exactly `WebsiteMk2` (case-sensitive)
+
+### Deployment Steps
+
+1. **Make sure all your changes are committed and pushed** to the `main` branch.
+
+2. **Run the deployment script**:
+   ```bash
+   # Make the script executable (Linux/Mac)
+   chmod +x deploy.sh
+   
+   # Run the deployment script
+   ./deploy.sh
+   ```
+
+   For Windows, you can use Git Bash or run:
+   ```bash
+   bash deploy.sh
+   ```
+
+3. **The script will**:
+   - Install dependencies
+   - Build the project
+   - Export the static site
+   - Push the built files to the `gh-pages` branch
+
+4. **After the script completes**, your site will be live at:
+   https://zarigata.github.io/WebsiteMk2
+
+### Manual Deployment
+
+If the script doesn't work, you can deploy manually:
+
+1. **Build and export the site**:
+   ```bash
+   npm run build
+   npm run export
+   ```
+
+2. **Create a new branch called `gh-pages`** and push the `out` directory:
+   ```bash
+   git checkout --orphan gh-pages
+   git reset --hard
+   git add -f out/
+   git mv out/* .
+   touch .nojekyll
+   git add .nojekyll
+   git commit -m "Deploy to GitHub Pages"
+   git push -f origin gh-pages
+   ```
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://zarigata.github.io/WebsiteMk2
+NEXT_PUBLIC_BASE_PATH=/WebsiteMk2
+```
+
 ## Building for Production
 
 1. **Build the application**
