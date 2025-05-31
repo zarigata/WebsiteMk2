@@ -1,12 +1,22 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+const repository = 'WebsiteMk2'; // Your repository name
+const assetPrefix = isProd ? `/${repository}/` : '';
+const basePath = isProd ? `/${repository}` : '';
+
 const nextConfig = {
   // Enable static export for GitHub Pages
   output: 'export',
   
+  // Set asset prefix for GitHub Pages
+  assetPrefix,
+  basePath,
+  
   // Configure images for static export
   images: {
     unoptimized: true, // Required for static export
-    domains: ['images.unsplash.com', 'source.unsplash.com'], // Add your image domains here
+    domains: ['images.unsplash.com', 'source.unsplash.com'],
+    path: isProd ? `${basePath}/_next/image` : '/_next/image',
   },
   
   // Add trailing slash for GitHub Pages compatibility
@@ -14,9 +24,28 @@ const nextConfig = {
   
   // Environment variables
   env: {
-    SITE_URL: process.env.SITE_URL || 'https://yourusername.github.io/catchy-website',
+    SITE_URL: isProd 
+      ? `https://yourusername.github.io/${repository}` 
+      : 'http://localhost:3000',
+    BASE_PATH: isProd ? `/${repository}` : '',
     CONTACT_EMAIL: 'info@catchy.sa',
     PHONE_NUMBER: '+966 12 345 6789',
+  },
+  
+  // Public runtime configuration (available on both server and client)
+  publicRuntimeConfig: {
+    basePath: isProd ? `/${repository}` : '',
+    siteUrl: isProd 
+      ? `https://yourusername.github.io/${repository}` 
+      : 'http://localhost:3000',
+  },
+  
+  // Make environment variables available to the browser
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? `/${repository}` : '',
+    NEXT_PUBLIC_SITE_URL: isProd 
+      ? `https://yourusername.github.io/${repository}` 
+      : 'http://localhost:3000',
   },
   
   // Enable React Strict Mode

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaCalendarAlt, FaUser, FaArrowRight } from 'react-icons/fa';
+import { formatUrl, formatImageUrl } from '@/lib/pathUtils';
 
 // Mock blog posts data
 const blogPosts = [
@@ -170,8 +171,8 @@ export default function BlogPage() {
                   <span>{blogPosts[0].readTime}</span>
                 </div>
                 <Link 
-                  href={`/blog/${blogPosts[0].slug}`}
-                  className="inline-flex items-center text-primary font-medium hover:underline"
+                  href={formatUrl(`/blog/${blogPosts[0].slug}`)}
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
                 >
                   Read more <FaArrowRight className="ml-1" size={14} />
                 </Link>
@@ -183,15 +184,19 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.slice(1).map((post) => (
               <article key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
-                  Blog Image
+                <div className="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={formatImageUrl(post.image)} 
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="uppercase tracking-wide text-xs text-primary font-semibold mb-1">
                     {post.category}
                   </div>
                   <h3 className="text-xl font-bold text-dark mb-2">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors duration-200">
+                    <Link href={formatUrl(`/blog/${post.slug}`)} className="hover:text-primary transition-colors duration-200">
                       {post.title}
                     </Link>
                   </h3>
