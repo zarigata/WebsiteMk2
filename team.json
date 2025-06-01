@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name_en": "Aisha Al-Fahad",
+        "name_ar": "عائشة الفهد",
+        "role_en": "Chief Executive Officer",
+        "role_ar": "الرئيس التنفيذي",
+        "intro_en": "Visionary leader with a passion for digital innovation and strategic growth in the Saudi market.",
+        "intro_ar": "قائدة ذات رؤية وشغف بالابتكار الرقمي والنمو الاستراتيجي في السوق السعودي.",
+        "image": "./assets/images/team/placeholder_female1.png" 
+    },
+    {
+        "id": 2,
+        "name_en": "Omar Khoury",
+        "name_ar": "عمر الخوري",
+        "role_en": "Chief Marketing Officer",
+        "role_ar": "رئيس قسم التسويق",
+        "intro_en": "Expert in crafting compelling brand narratives and data-driven marketing campaigns.",
+        "intro_ar": "خبير في صياغة روايات العلامات التجارية الجذابة والحملات التسويقية القائمة على البيانات.",
+        "image": "./assets/images/team/placeholder_male1.png"
+    },
+    {
+        "id": 3,
+        "name_en": "Layla Hassan",
+        "name_ar": "ليلى حسن",
+        "role_en": "Head of Technology & Automation",
+        "role_ar": "رئيس قسم التكنولوجيا والأتمتة",
+        "intro_en": "Driving technological excellence and implementing cutting-edge automation solutions for clients.",
+        "intro_ar": "تقود التميز التكنولوجي وتنفذ حلول أتمتة متطورة للعملاء.",
+        "image": "./assets/images/team/placeholder_female2.png"
+    },
+    {
+        "id": 4,
+        "name_en": "Karim Ibrahim",
+        "name_ar": "كريم ابراهيم",
+        "role_en": "Creative Director",
+        "role_ar": "المدير الإبداعي",
+        "intro_en": "Mastermind behind visually stunning designs and impactful branding strategies.",
+        "intro_ar": "العقل المدبر وراء التصاميم المذهلة بصريًا واستراتيجيات العلامات التجارية المؤثرة.",
+        "image": "./assets/images/team/placeholder_male2.png"
+    }
+]
+// // DATA_SOURCE :: Team Members //
+// // PURPOSE :: Provides information for the 'About Us' section. //
+// // STRUCTURE :: Array of TeamMember objects. //
+// // FIELDS :: id, name (en/ar), role (en/ar), intro (en/ar), image path //
+// // NOTES :: Ensure image paths are correct relative to the HTML file or use absolute paths if hosted. //
+// // Placeholder images are used. Replace with actual team member photos. //
+// // Suggestion: Create an 'assets/images/team/' directory for these images. //
+// // END_DATA_SOURCE //

@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "name_en": "Marketing Strategy",
+        "name_ar": "استراتيجية التسويق",
+        "description_en": "Comprehensive marketing plans tailored to your business goals and target audience in Saudi Arabia.",
+        "description_ar": "خطط تسويق شاملة مصممة خصيصًا لأهداف عملك والجمهور المستهدف في المملكة العربية السعودية.",
+        "icon_placeholder": "🎯" 
+    },
+    {
+        "id": 2,
+        "name_en": "Online Presence Optimization",
+        "name_ar": "تحسين التواجد عبر الإنترنت",
+        "description_en": "Enhancing your visibility across all digital platforms, from SEO to social media engagement.",
+        "description_ar": "تعزيز ظهورك عبر جميع المنصات الرقمية، من تحسين محركات البحث إلى التفاعل على وسائل التواصل الاجتماعي.",
+        "icon_placeholder": "🌐"
+    },
+    {
+        "id": 3,
+        "name_en": "Website Creation & Development",
+        "name_ar": "إنشاء وتطوير المواقع الإلكترونية",
+        "description_en": "Modern, responsive, and user-friendly websites that convert visitors into customers.",
+        "description_ar": "مواقع إلكترونية حديثة وسريعة الاستجابة وسهلة الاستخدام تحول الزوار إلى عملاء.",
+        "icon_placeholder": "💻"
+    },
+    {
+        "id": 4,
+        "name_en": "Automation Tools for Business",
+        "name_ar": "أدوات الأتمتة للأعمال",
+        "description_en": "Implementing smart automation to streamline your marketing efforts and business processes.",
+        "description_ar": "تطبيق الأتمتة الذكية لتبسيط جهودك التسويقية وعمليات عملك.",
+        "icon_placeholder": "⚙️"
+    },
+    {
+        "id": 5,
+        "name_en": "Branding and Design",
+        "name_ar": "العلامات التجارية والتصميم",
+        "description_en": "Creating memorable brand identities and visually appealing designs that reflect your company's essence.",
+        "description_ar": "إنشاء هويات تجارية لا تُنسى وتصاميم جذابة بصريًا تعكس جوهر شركتك.",
+        "icon_placeholder": "🎨"
+    }
+]
+// // DATA_SOURCE :: Services Offered //
+// // PURPOSE :: Provides information for the 'Services' section. //
+// // STRUCTURE :: Array of ServiceItem objects. //
+// // FIELDS :: id, name (en/ar), description (en/ar), icon_placeholder (emoji or class for icon font) //
+// // NOTES :: Replace icon_placeholder with actual icon classes if using a library like Font Awesome. //
+// // END_DATA_SOURCE //

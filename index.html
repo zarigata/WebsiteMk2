@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catchy - Complete digital presence solutions in Saudi Arabia.">
+    <meta name="keywords" content="marketing, digital presence, Saudi Arabia, web design, automation, branding">
+    <title>Catchy - Your Digital Presence Partner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;500;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- // CODEX_INFO_BLOCK // -->
+    <!-- // PROJECT: Catchy Marketing Website -->
+    <!-- // FILE: index.html (Homepage) -->
+    <!-- // AUTHOR: Cascade AI for USER -->
+    <!-- // DATE: 2025-06-01 -->
+    <!-- // PURPOSE: Main landing page for Catchy. -->
+    <!-- // VERSION: 1.0.0 -->
+    <!-- // NOTES: Designed for static hosting on GitHub Pages. -->
+    <!-- // RTL_SUPPORT: Basic structure ready for LTR/RTL switching via JS. -->
+    <!-- // END_CODEX_INFO_BLOCK // -->
+</head>
+<body>
+    <!-- ======================
+         HEADER & NAVIGATION
+         ====================== -->
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo" data-lang-key="logoText">
+                    <img src="Images/logo.png" alt="Catchy Logo" width="40" height="40">
+                    <span>Catchy</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link" data-lang-key="navHome">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-lang-key="navAbout">About Us</a></li>
+                    <li><a href="#services" class="nav-link" data-lang-key="navServices">Services</a></li>
+                    <li><a href="#blog" class="nav-link" data-lang-key="navBlog">Blog</a></li>
+                    <li><a href="#contact" class="nav-link cta-button" data-lang-key="navContact">Contact Us</a></li>
+                </ul>
+                <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
+                    <span class="lang-en">EN</span>/<span class="lang-ar">AR</span>
+                </button>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="sr-only" data-lang-key="srOnlyMenu">Open navigation menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- // END_HEADER_SECTION // -->
+
+    <!-- // MAIN_CONTENT :: Page sections will be loaded or defined here // -->
+    <main>
+        <!-- ======================
+         HERO SECTION
+         ====================== -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 data-lang-key="heroTitle">Transform Your Digital Presence in Saudi Arabia</h1>
+                    <p data-lang-key="heroSubtitle">We craft bespoke marketing strategies that drive real results. From brand development to digital transformation, we help Saudi businesses thrive in the digital age.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="cta-button" data-lang-key="ourServices">Our Services</a>
+                        <a href="#contact" class="cta-button secondary" data-lang-key="getInTouch">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image animate-fade-in-up delay-3">
+                    <img src="Images/cat presenting thing.png" alt="Digital Marketing Solutions" data-lang-key="heroImageAlt">
+                </div>
+                
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                    <span class="arrow"></span>
+                </div>
+            </div>
+            
+            <!-- Animated background elements -->
+            <div class="hero-shape-1"></div>
+            <div class="hero-shape-2"></div>
+            <div class="hero-shape-3"></div>
+        </section>
+        <!-- // END_HERO_SECTION // -->
+
+        <!-- // ABOUT_US_PREVIEW (Optional short version on homepage) // -->
+        <section id="about-preview" class="content-section">
+            <div class="container">
+                <h2 data-lang-key="aboutPreviewTitle">Who We Are</h2>
+                <p data-lang-key="aboutPreviewText">Catchy is your dedicated partner in navigating the digital landscape of Saudi Arabia. We craft bespoke marketing strategies that resonate and deliver results.</p>
+                <a href="#about" class="learn-more-button" data-lang-key="learnMore">Learn More About Us</a>
+            </div>
+        </section>
+        <!-- // END_ABOUT_US_PREVIEW // -->
+
+        <!-- // SERVICES_PREVIEW (Key services highlight) // -->
+        <section id="services-preview" class="content-section alt-bg">
+            <div class="container">
+                <h2 data-lang-key="servicesPreviewTitle">What We Offer</h2>
+                <div class="services-grid">
+                    <!-- Service items will be dynamically loaded or listed here -->
+                    <div class="service-item-placeholder" data-lang-key="serviceItem1">[Service 1: Marketing Strategy]</div>
+                    <div class="service-item-placeholder" data-lang-key="serviceItem2">[Service 2: Online Presence]</div>
+                    <div class="service-item-placeholder" data-lang-key="serviceItem3">[Service 3: Website Creation]</div>
+                </div>
+                <a href="#services" class="learn-more-button" data-lang-key="seeAllServices">See All Services</a>
+            </div>
+        </section>
+        <!-- // END_SERVICES_PREVIEW // -->
+
+        <!-- // Sections for About Us, Services, Blog, Contact Us will be linked or dynamically loaded // -->
+        <!-- // For a true SPA feel on GitHub pages, we might load content dynamically into divs -->
+        <!-- // Or, for simplicity, these could be separate HTML pages if preferred, though SPA is often cleaner. -->
+        <!-- // Given no deep folders/routing, dynamic loading into sections of index.html is a good approach. -->
+
+        <section id="about" class="page-section" style="display:none;">
+            <!-- Content for About Us page -->
+            <div class="container">
+                <h2 data-lang-key="aboutTitle">About Catchy</h2>
+                <p data-lang-key="aboutStory">[Brief story of Catchy...]</p>
+                <h3 data-lang-key="teamTitle">Our Team</h3>
+                <div id="team-members-container" class="team-grid">
+                    <!-- Team members will be loaded here by JS -->
+                </div>
+                <h3 data-lang-key="visionTitle">Our Vision & Values</h3>
+                <p data-lang-key="visionText">[Company vision and values...]</p>
+            </div>
+        </section>
+
+        <section id="services" class="page-section alt-bg" style="display:none;">
+            <!-- Content for Services page -->
+            <div class="container">
+                <h2 data-lang-key="servicesTitle">Our Services</h2>
+                <div id="services-list-container" class="services-detailed-grid">
+                    <!-- Services will be loaded here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="page-section" style="display:none;">
+            <!-- Content for Blog page -->
+            <div class="container">
+                <h2 data-lang-key="blogTitle">Catchy Insights</h2>
+                <div id="blog-posts-container" class="blog-layout">
+                    <!-- Blog posts will be loaded here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section alt-bg">
+            <!-- Content for Contact Us page -->
+            <div class="container">
+                <h2 data-lang-key="contactTitle">Get In Touch</h2>
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <label for="name" data-lang-key="formName">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email" data-lang-key="formEmail">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message" data-lang-key="formMessage">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit" class="cta-button" data-lang-key="formSubmit">Send Message</button>
+                </form>
+                <div class="contact-details">
+                    <p data-lang-key="contactAddress">Address: [Your Company Address, Riyadh, Saudi Arabia]</p>
+                    <p data-lang-key="contactPhone">Phone: [Your Phone Number]</p>
+                    <div class="social-links">
+                        <a href="#" data-lang-key="socialLinkedIn">LinkedIn</a> | 
+                        <a href="#" data-lang-key="socialTwitter">Twitter</a> | 
+                        <a href="#" data-lang-key="socialInstagram">Instagram</a>
+                    </div>
+                </div>
+                <!-- Optional Google Maps Embed -->
+                <!-- <div id="map-placeholder" data-lang-key="mapPlaceholder">[Google Maps Embed Here]</div> -->
+            </div>
+        </section>
+
+    </main>
+    <!-- // END_MAIN_CONTENT // -->
+
+    <!-- // FOOTER_SECTION :: Copyright, quick links // -->
+    <footer>
+        <div class="container">
+            <p data-lang-key="footerCopyright">&copy; 2025 Catchy. All rights reserved.</p>
+            <p><a href="#" data-lang-key="footerPrivacy">Privacy Policy</a> | <a href="#" data-lang-key="footerTerms">Terms of Service</a></p>
+        </div>
+    </footer>
+    <!-- // END_FOOTER_SECTION // -->
+
+    <!-- Scripts -->
+    <!-- Load animations first -->
+    <script src="js/animations.js"></script>
+    <!-- Then load main functionality -->
+    <script src="js/main.js"></script>
+    <!-- // END_SCRIPT_BLOCK // -->
+</body>
+</html>

@@ -1,0 +1,525 @@
+"use strict";
+// // CODEX_INFO_BLOCK //
+// // PROJECT: Catchy Marketing Website
+// // FILE: main.ts
+// // AUTHOR: Cascade AI for USER
+// // DATE: 2025-06-01
+// // PURPOSE: Main TypeScript file for website interactivity, language switching, and content loading.
+// // VERSION: 1.0.0
+// // NOTES: Compile this file using `tsc` to generate js/main.js.
+// // END_CODEX_INFO_BLOCK //
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+// // END_TYPE_DEFINITIONS //
+// // GLOBAL_STATE :: Manages current language and potentially other states //
+let currentLanguage = 'en';
+const translations = {}; // To be populated from a JSON or directly
+// // END_GLOBAL_STATE //
+// // DOM_ELEMENT_SELECTORS :: Cache frequently accessed DOM elements //
+const DOMElements = {
+    html: document.documentElement,
+    languageToggle: document.getElementById('language-toggle'),
+    menuToggle: document.getElementById('menu-toggle'),
+    navMenu: document.querySelector('.nav-links'), // The <ul> element itself
+    navLinks: document.querySelectorAll('.nav-links a'),
+    pageSections: document.querySelectorAll('.page-section'),
+    teamContainer: document.getElementById('team-members-container'),
+
+// ======================
+// GLOBAL VARIABLES
+// ======================
+let currentLanguage = 'en';
+const translations = {
+    // Navigation
+    logoText: { en: "Catchy", ar: "كاتشي" },
+    navHome: { en: "Home", ar: "الرئيسية" },
+    navAbout: { en: "About Us", ar: "من نحن" },
+    navServices: { en: "Services", ar: "خدماتنا" },
+    navBlog: { en: "Blog", ar: "المدونة" },
+    navContact: { en: "Contact Us", ar: "اتصل بنا" },
+    
+    // Hero Section
+    heroTitle: { en: "Transform Your Digital Presence in Saudi Arabia", ar: "حول وجودك الرقمي في المملكة العربية السعودية" },
+    heroSubtitle: { en: "We craft bespoke marketing strategies that drive real results. From brand development to digital transformation, we help Saudi businesses thrive in the digital age.", ar: "نصمم استراتيجيات تسويقية مخصصة تحقق نتائج حقيقية. من تطوير العلامة التجارية إلى التحول الرقمي، نساعد الشركات السعودية على الازدهار في العصر الرقمي." },
+    ourServices: { en: "Our Services", ar: "خدماتنا" },
+    getInTouch: { en: "Get in Touch", ar: "تواصل معنا" },
+    heroImageAlt: { en: "Digital Marketing Solutions", ar: "حلول التسويق الرقمي" },
+    
+    // Other sections will be added here
+    srOnlyMenu: { en: "Menu", ar: "القائمة" },
+    
+    // About Section
+    aboutTitle: { en: "About Us", ar: "من نحن" },
+    
+    // Services Section
+    servicesTitle: { en: "Our Services", ar: "خدماتنا" },
+    
+    // Blog Section
+    blogTitle: { en: "Latest Insights", ar: "أحدث المقالات" },
+    
+    // Contact Section
+    contactTitle: { en: "Get In Touch", ar: "تواصل معنا" },
+    contactFormName: { en: "Your Name", ar: "الاسم" },
+    contactFormEmail: { en: "Your Email", ar: "البريد الإلكتروني" },
+    contactFormMessage: { en: "Your Message", ar: "رسالتك" },
+    contactFormSubmit: { en: "Send Message", ar: "إرسال الرسالة" },
+    
+    // Footer
+    footerRights: { en: " 2025 Catchy. All rights reserved.", ar: " 2025 كاتشي. جميع الحقوق محفوظة." }
+};
+
+// ======================
+// DOM ELEMENTS
+// ======================
+const DOMElements = {
+    // Core Elements
+    html: document.documentElement,
+    body: document.body,
+    
+    // Header & Navigation
+    header: document.getElementById('main-header'),
+    languageToggle: document.getElementById('language-toggle'),
+    menuToggle: document.getElementById('menu-toggle'),
+    navMenu: document.querySelector('.nav-links'),
+    navLinks: document.querySelectorAll('.nav-links a'),
+    
+    // Page Sections
+    pageSections: document.querySelectorAll('.page-section'),
+    heroSection: document.getElementById('home'),
+    
+    // Content Containers
+    teamContainer: document.getElementById('team-members-container'),
+    servicesContainer: document.getElementById('services-list-container'),
+    blogContainer: document.getElementById('blog-posts-container')
+};
+
+// ======================
+// LANGUAGE FUNCTIONS
+// ======================
+function setLanguage(lang) {
+    currentLanguage = lang;
+    DOMElements.html.lang = lang;
+    DOMElements.html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    
+    // Update all elements with data-lang-key attribute
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (key && translations[key]) {
+            element.textContent = translations[key][currentLanguage];
+        }
+    });
+    
+    // Update active class on nav links
+    updateActiveNavLink();
+}
+
+function toggleLanguage() {
+    const newLang = currentLanguage === 'en' ? 'ar' : 'en';
+    setLanguage(newLang);
+    
+    // Save preference to localStorage
+    try {
+        localStorage.setItem('preferredLanguage', newLang);
+    } catch (e) {
+        console.warn('Could not save language preference:', e);
+    }
+}
+
+// ======================
+// MOBILE MENU
+// ======================
+function toggleMobileMenu() {
+    const isExpanded = DOMElements.menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    DOMElements.menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+    DOMElements.menuToggle.classList.toggle('active');
+    DOMElements.navMenu.classList.toggle('active');
+    DOMElements.body.classList.toggle('menu-open');
+    
+    // Toggle body scroll when menu is open
+    if (!isExpanded) {
+        DOMElements.body.style.overflow = 'hidden';
+    } else {
+        DOMElements.body.style.overflow = '';
+    }
+}
+
+// ======================
+// NAVIGATION
+// ======================
+function updateActiveNavLink() {
+    const scrollPosition = window.scrollY + 100;
+    
+    DOMElements.pageSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            DOMElements.navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+// ======================
+// SMOOTH SCROLL
+// ======================
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            
+            // Skip if it's a different page or no target
+            if (targetId === '#' || targetId.includes(':')) return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL without page reload
+                history.pushState(null, '', targetId);
+            }
+        });
+    });
+}
+
+// ======================
+// INITIALIZATION
+// =====================
+function init() {
+    // Set initial language from localStorage or default to 'en'
+    try {
+        const savedLang = localStorage.getItem('preferredLanguage');
+        setLanguage(savedLang || 'en');
+    } catch (e) {
+        setLanguage('en');
+    }
+    
+    // Initialize event listeners
+    initEventListeners();
+    
+    // Initialize smooth scroll
+    initSmoothScroll();
+    
+    // Initial active link check
+    updateActiveNavLink();
+    
+    // Add loaded class to body for transitions
+    setTimeout(() => {
+        DOMElements.body.classList.add('loaded');
+    }, 100);
+    
+    console.log('Catchy website initialized');
+}
+
+function initEventListeners() {
+    // Language toggle
+    if (DOMElements.languageToggle) {
+        DOMElements.languageToggle.addEventListener('click', toggleLanguage);
+    }
+    
+    // Mobile menu toggle
+    if (DOMElements.menuToggle) {
+        DOMElements.menuToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close mobile menu when clicking on a nav link
+    DOMElements.navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (DOMElements.navMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    });
+    
+    // Update active nav link on scroll
+    window.addEventListener('scroll', updateActiveNavLink);
+}
+
+// Run initialization when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+    visionText: { en: "[Company vision and values...]", ar: "[رؤية الشركة وقيمها...]" },
+    servicesTitle: { en: "Our Services", ar: "خدماتنا" },
+    blogTitle: { en: "Catchy Insights", ar: "رؤى كاتشي" },
+    contactTitle: { en: "Get In Touch", ar: "تواصل معنا" },
+    formName: { en: "Name:", ar: "الاسم:" },
+    formEmail: { en: "Email:", ar: "البريد الإلكتروني:" },
+    formMessage: { en: "Message:", ar: "الرسالة:" },
+    formSubmit: { en: "Send Message", ar: "إرسال الرسالة" },
+    contactAddress: { en: "Address: [Your Company Address, Riyadh, Saudi Arabia]", ar: "العنوان: [عنوان شركتك، الرياض، المملكة العربية السعودية]" },
+    contactPhone: { en: "Phone: [Your Phone Number]", ar: "الهاتف: [رقم هاتفك]" },
+    socialLinkedIn: { en: "LinkedIn", ar: "لينكدإن" },
+    socialTwitter: { en: "Twitter", ar: "تويتر" },
+    socialInstagram: { en: "Instagram", ar: "انستغرام" },
+    mapPlaceholder: { en: "[Google Maps Embed Here]", ar: "[تضمين خرائط جوجل هنا]" },
+    footerCopyright: { en: "&copy; 2025 Catchy. All rights reserved.", ar: "&copy; 2025 كاتشي. جميع الحقوق محفوظة." },
+    footerPrivacy: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
+    footerTerms: { en: "Terms of Service", ar: "شروط الخدمة" },
+    srOnlyMenu: { en: "Open navigation menu", ar: "فتح قائمة التنقل" },
+};
+// // END_TRANSLATION_DATA //
+// // LANGUAGE_FUNCTIONS :: Handles language switching and text updates // 
+function setLanguage(lang) {
+    currentLanguage = lang;
+    DOMElements.html.lang = lang;
+    DOMElements.html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    // // Update all elements with data-lang-key attribute
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (key && siteTranslations[key]) {
+            element.textContent = siteTranslations[key][currentLanguage];
+        }
+    });
+    // // Update dynamically loaded content if it's already rendered
+    if (DOMElements.teamContainer && DOMElements.teamContainer.children.length > 0)
+        loadTeamMembers();
+    if (DOMElements.servicesContainer && DOMElements.servicesContainer.children.length > 0)
+        loadServices();
+    if (DOMElements.blogContainer && DOMElements.blogContainer.children.length > 0)
+        loadBlogPosts();
+    // // Update language toggle button text (optional)
+    DOMElements.languageToggle.textContent = lang === 'en' ? 'AR' : 'EN';
+}
+function toggleLanguage() {
+    setLanguage(currentLanguage === 'en' ? 'ar' : 'en');
+}
+// // END_LANGUAGE_FUNCTIONS //
+// // MOBILE_MENU_FUNCTIONS :: Handles toggling the mobile navigation menu //
+function toggleMobileMenu() {
+    const isExpanded = DOMElements.menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    DOMElements.menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+    DOMElements.menuToggle.classList.toggle('active');
+    DOMElements.navMenu.classList.toggle('active');
+    // // Update screen reader text for menu button
+    const srTextElement = DOMElements.menuToggle.querySelector('.sr-only');
+    if (srTextElement) {
+        const menuKey = DOMElements.navMenu.classList.contains('active') ? 'srOnlyCloseMenu' : 'srOnlyOpenMenu';
+        // // Add translations for close menu if not present
+        if (!siteTranslations.srOnlyCloseMenu)
+            siteTranslations.srOnlyCloseMenu = { en: "Close navigation menu", ar: "إغلاق قائمة التنقل" };
+        if (!siteTranslations.srOnlyOpenMenu)
+            siteTranslations.srOnlyOpenMenu = { en: "Open navigation menu", ar: "فتح قائمة التنقل" };
+        srTextElement.textContent = siteTranslations[menuKey][currentLanguage];
+    }
+}
+// // END_MOBILE_MENU_FUNCTIONS //
+// // CONTENT_LOADING_FUNCTIONS :: Fetches and renders dynamic content //
+function fetchData(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        // // Simulating fetch for local JSON files
+        // // In a real GitHub Pages scenario, ensure these files are accessible
+        try {
+            const response = yield fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status} for URL: ${url}`);
+            }
+            return yield response.json();
+        }
+        catch (error) {
+            console.error(`// ERROR :: Failed to fetch data from ${url}:`, error);
+            // // Fallback to empty array or default structure to prevent site breaking
+            return [];
+        }
+    });
+}
+function loadTeamMembers() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!DOMElements.teamContainer)
+            return;
+        try {
+            const team = yield fetchData('./team.json');
+            DOMElements.teamContainer.innerHTML = ''; // // Clear existing content
+            team.forEach(member => {
+                const memberDiv = document.createElement('div');
+                memberDiv.className = 'team-member';
+                memberDiv.innerHTML = `
+                <img src="${member.image}" alt="${currentLanguage === 'en' ? member.name_en : member.name_ar}">
+                <h4>${currentLanguage === 'en' ? member.name_en : member.name_ar}</h4>
+                <p class="role">${currentLanguage === 'en' ? member.role_en : member.role_ar}</p>
+                <p>${currentLanguage === 'en' ? member.intro_en : member.intro_ar}</p>
+            `;
+                DOMElements.teamContainer.appendChild(memberDiv);
+            });
+        }
+        catch (error) {
+            console.error('// ERROR :: Could not load team members:', error);
+            DOMElements.teamContainer.innerHTML = `<p>${currentLanguage === 'en' ? 'Team members could not be loaded.' : 'لم يتم تحميل أعضاء الفريق.'}</p>`;
+        }
+    });
+}
+function loadServices() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!DOMElements.servicesContainer)
+            return;
+        try {
+            const services = yield fetchData('./services.json');
+            DOMElements.servicesContainer.innerHTML = ''; // // Clear existing content
+            services.forEach(service => {
+                const serviceDiv = document.createElement('div');
+                serviceDiv.className = 'service-item';
+                serviceDiv.innerHTML = `
+                <div class="icon-placeholder">${service.icon_placeholder}</div> 
+                <h4>${currentLanguage === 'en' ? service.name_en : service.name_ar}</h4>
+                <p>${currentLanguage === 'en' ? service.description_en : service.description_ar}</p>
+            `;
+                // // Note: Icons would typically be classes for an icon font (e.g., Font Awesome) or SVG elements.
+                // // For now, 'icon_placeholder' is just text.
+                DOMElements.servicesContainer.appendChild(serviceDiv);
+            });
+        }
+        catch (error) {
+            console.error('// ERROR :: Could not load services:', error);
+            DOMElements.servicesContainer.innerHTML = `<p>${currentLanguage === 'en' ? 'Services could not be loaded.' : 'لم يتم تحميل الخدمات.'}</p>`;
+        }
+    });
+}
+function loadBlogPosts() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!DOMElements.blogContainer)
+            return;
+        try {
+            const posts = yield fetchData('./blog-posts.json');
+            DOMElements.blogContainer.innerHTML = ''; // // Clear existing content
+            posts.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'blog-post-preview';
+                // // Basic preview, a full post view would require more logic or a separate template
+                postDiv.innerHTML = `
+                ${post.image_placeholder && post.image_placeholder !== '[none]' ? `<img src="${post.image_placeholder}" alt="${currentLanguage === 'en' ? post.title_en : post.title_ar}" class="featured-image">` : ''}
+                <div class="content">
+                    <h4>${currentLanguage === 'en' ? post.title_en : post.title_ar}</h4>
+                    <p class="date">${currentLanguage === 'en' ? post.date_en : post.date_ar}</p>
+                    <p>${currentLanguage === 'en' ? post.summary_en : post.summary_ar}</p>
+                    <a href="#blog-post-${post.id}" class="learn-more-button" data-lang-key="readMore">${currentLanguage === 'en' ? 'Read More' : 'اقرأ المزيد'}</a>
+                </div>
+            `;
+                DOMElements.blogContainer.appendChild(postDiv);
+            });
+            // // Add 'readMore' to translations if not present
+            if (!siteTranslations.readMore) {
+                siteTranslations.readMore = { en: "Read More", ar: "اقرأ المزيد" };
+            }
+        }
+        catch (error) {
+            console.error('// ERROR :: Could not load blog posts:', error);
+            DOMElements.blogContainer.innerHTML = `<p>${currentLanguage === 'en' ? 'Blog posts could not be loaded.' : 'لم يتم تحميل منشورات المدونة.'}</p>`;
+        }
+    });
+}
+// // END_CONTENT_LOADING_FUNCTIONS //
+// // NAVIGATION_FUNCTIONS :: Handles SPA-like page section visibility //
+function showPageSection(targetId) {
+    DOMElements.pageSections.forEach(section => {
+        if (section.id === targetId) {
+            section.style.display = 'block';
+            // // Dynamically load content if this section is being shown for the first time or needs refresh
+            if (targetId === 'about' && DOMElements.teamContainer && DOMElements.teamContainer.children.length === 0)
+                loadTeamMembers();
+            if (targetId === 'services' && DOMElements.servicesContainer && DOMElements.servicesContainer.children.length === 0)
+                loadServices();
+            if (targetId === 'blog' && DOMElements.blogContainer && DOMElements.blogContainer.children.length === 0)
+                loadBlogPosts();
+        }
+        else {
+            // // Only hide sections that are designated as full 'page-section'
+            // // Keep hero and other homepage previews visible unless explicitly part of a different view logic
+            if (section.classList.contains('page-section')) {
+                section.style.display = 'none';
+            }
+        }
+    });
+    // // Special handling for homepage sections if we are not on a specific 'page'
+    const homepageSections = ['home', 'about-preview', 'services-preview'];
+    const isHomePageView = homepageSections.includes(targetId) || targetId === 'index.html' || targetId === '';
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+        homeSection.style.display = isHomePageView || targetId === 'home' ? 'flex' : 'none'; // hero is flex
+    }
+    const aboutPreviewSection = document.getElementById('about-preview');
+    if (aboutPreviewSection) {
+        aboutPreviewSection.style.display = isHomePageView ? 'block' : 'none';
+    }
+    const servicesPreviewSection = document.getElementById('services-preview');
+    if (servicesPreviewSection) {
+        servicesPreviewSection.style.display = isHomePageView ? 'block' : 'none';
+    }
+    // // The main contact section is always visible at the bottom in this design, but if it were a page:
+    // const contactSection = document.getElementById('contact');
+    // if (contactSection) {
+    //    contactSection.style.display = isHomePageView || targetId === 'contact' ? 'block' : 'none';
+    // }
+    // // Scroll to the top of the section or page
+    const activeSection = document.getElementById(targetId);
+    if (activeSection)
+        activeSection.scrollIntoView({ behavior: 'smooth' });
+}
+function handleNavigation(event) {
+    var _a;
+    event.preventDefault();
+    const target = event.currentTarget;
+    const targetId = ((_a = target.getAttribute('href')) === null || _a === void 0 ? void 0 : _a.substring(1)) || 'home'; // Default to home
+    showPageSection(targetId);
+    // // Update active class on nav links
+    DOMElements.navLinks.forEach(link => link.classList.remove('active'));
+    target.classList.add('active');
+    // // Close mobile menu after navigation (if open and on mobile view)
+    if (DOMElements.navMenu.classList.contains('active') && DOMElements.menuToggle.style.display !== 'none') {
+        toggleMobileMenu();
+    }
+}
+// // END_NAVIGATION_FUNCTIONS //
+// // INITIALIZATION_FUNCTION :: Sets up event listeners and initial state //
+function initializeWebsite() {
+    // // Set initial language based on browser or default
+    // // For simplicity, defaulting to 'en'. Could check browser lang: navigator.language.startsWith('ar')
+    setLanguage('en');
+    if (DOMElements.languageToggle) {
+        DOMElements.languageToggle.addEventListener('click', toggleLanguage);
+    }
+    if (DOMElements.menuToggle) {
+        DOMElements.menuToggle.addEventListener('click', toggleMobileMenu);
+    }
+    DOMElements.navLinks.forEach(link => {
+        link.addEventListener('click', handleNavigation);
+    });
+    // // Determine initial page view based on URL hash, or default to home
+    const initialHash = window.location.hash.substring(1);
+    const validInitialSections = ['home', 'about', 'services', 'blog', 'contact'];
+    if (initialHash && validInitialSections.includes(initialHash)) {
+        showPageSection(initialHash);
+        // // Set active nav link
+        const activeNavLink = document.querySelector(`.nav-links a[href="#${initialHash}"]`);
+        if (activeNavLink)
+            activeNavLink.classList.add('active');
+    }
+    else {
+        showPageSection('home'); // // Default to showing homepage content
+        const homeNavLink = document.querySelector('.nav-links a[href="#home"]');
+        if (homeNavLink)
+            homeNavLink.classList.add('active');
+    }
+    // // Load contact form if on contact page or if it's always visible
+    // // No specific dynamic loading for contact form in this setup, it's static HTML.
+    console.log('// LOG :: Catchy website initialized //');
+}
+// // END_INITIALIZATION_FUNCTION //
+// // EVENT_LISTENERS_ATTACHMENT :: Ensures DOM is ready before running scripts //
+document.addEventListener('DOMContentLoaded', initializeWebsite);
+// // END_EVENT_LISTENERS_ATTACHMENT //
+//# sourceMappingURL=main.js.map
