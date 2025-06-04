@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our Projects - Sleek Digital Brand Acceleration. See our portfolio of successful digital projects.">
+    <title>Our Projects - Sleek</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Sleek Logo" class="logo-img">
+                <span class="logo-text">Sleek</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="about.html" data-i18n="nav_about">About</a>
+                <a href="services.html" data-i18n="nav_services">Services</a>
+                <a href="projects.html" class="active" data-i18n="nav_projects">Projects</a>
+                <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                <a href="blog/" data-i18n="nav_blog">Blog</a>
+                <button id="language-toggle" class="btn btn-outline" aria-label="Toggle language">
+                    <span class="lang-en">عربي</span>
+                    <span class="lang-ar" style="display: none;">EN</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 data-i18n="projects_page_title">Our Projects</h1>
+            <p class="lead" data-i18n="projects_page_subtitle">Explore our portfolio of successful digital transformations</p>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+                <button class="filter-btn" data-filter="web" data-i18n="filter_web">Web Design</button>
+                <button class="filter-btn" data-filter="branding" data-i18n="filter_branding">Branding</button>
+                <button class="filter-btn" data-filter="marketing" data-i18n="filter_marketing">Marketing</button>
+                <button class="filter-btn" data-filter="seo" data-i18n="filter_seo">SEO</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="assets/images/cat on coputer.png" alt="E-commerce Website">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3 data-i18n="project1_title">E-commerce Platform</h3>
+                                <p data-i18n="project1_category">Web Design & Development</p>
+                                <a href="#" class="btn btn-outline" data-i18n="view_project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="branding">
+                    <div class="project-image">
+                        <img src="assets/images/Curious Green Cat with Question Mark.png" alt="Brand Identity">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3 data-i18n="project2_title">Brand Identity</h3>
+                                <p data-i18n="project2_category">Branding & Design</p>
+                                <a href="#" class="btn btn-outline" data-i18n="view_project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="marketing">
+                    <div class="project-image">
+                        <img src="assets/images/influencer.png" alt="Social Media Campaign">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3 data-i18n="project3_title">Social Media Campaign</h3>
+                                <p data-i18n="project3_category">Digital Marketing</p>
+                                <a href="#" class="btn btn-outline" data-i18n="view_project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="seo">
+                    <div class="project-image">
+                        <img src="assets/images/AI cat.png" alt="SEO Optimization">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3 data-i18n="project4_title">SEO Optimization</h3>
+                                <p data-i18n="project4_category">Search Engine Optimization</p>
+                                <a href="#" class="btn btn-outline" data-i18n="view_project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="assets/images/cat presenting thing.png" alt="Corporate Website">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3 data-i18n="project5_title">Corporate Website</h3>
+                                <p data-i18n="project5_category">Web Design & Development</p>
+                                <a href="#" class="btn btn-outline" data-i18n="view_project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-category="branding">
+                    <div class="project-image">
+                        <img src="assets/images/progrtamer.png" alt="Product Packaging">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3 data-i18n="project6_title">Product Packaging</h3>
+                                <p data-i18n="project6_category">Branding & Design</p>
+                                <a href="#" class="btn btn-outline" data-i18n="view_project">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center" style="margin-top: 3rem;">
+                <button class="btn btn-primary" id="load-more" data-i18n="load_more">Load More Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-i18n="cta_title">Ready to Start Your Project?</h2>
+                <p data-i18n="cta_subtitle">Let's create something amazing together.</p>
+                <a href="contact.html" class="btn btn-light" data-i18n="cta_button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="Sleek Logo" class="logo-img">
+                        <span class="logo-text">Sleek</span>
+                    </a>
+                    <p data-i18n="footer_about">Helping businesses launch and automate their online presence with beautiful, effective digital solutions.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-i18n="footer_quick_links">Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="services.html" data-i18n="nav_services">Services</a></li>
+                        <li><a href="projects.html" data-i18n="nav_projects">Our Work</a></li>
+                        <li><a href="blog/" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 data-i18n="footer_contact">Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@getsleek.co</li>
+                        <li><i class="fas fa-phone"></i> +966 12 345 6789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 data-i18n="footer_newsletter">Stay Updated</h4>
+                    <p data-i18n="newsletter_description">Subscribe to our newsletter for the latest updates and tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" data-i18n-placeholder="newsletter_placeholder" required>
+                        <button type="submit" class="btn btn-primary" data-i18n="newsletter_button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">© 2025 Sleek. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" data-i18n="back_to_top"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

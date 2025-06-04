@@ -1,0 +1,49 @@
+{
+  "nav_home": "Home",
+  "nav_about": "About",
+  "nav_services": "Services",
+  "nav_projects": "Projects",
+  "nav_contact": "Contact",
+  "nav_blog": "Blog",
+  "nav_language": "العربية",
+  
+  "hero_title": "Your Business, Online – Beautifully.",
+  "hero_subtitle": "From your first post to full automation — we make your business impossible to miss.",
+  "hero_cta_primary": "Get Your Digital Presence Started",
+  "hero_cta_secondary": "Learn More",
+  
+  "services_title": "Our Services",
+  "services_subtitle": "Everything you need to launch and grow your digital presence",
+  "service_branding": "Digital Branding",
+  "service_branding_desc": "Create a memorable brand identity that stands out in the digital landscape.",
+  "service_web": "Website & Social Setup",
+  "service_web_desc": "Professional websites and social media profiles that convert visitors into customers.",
+  "service_automation": "Marketing Automation",
+  "service_automation_desc": "Save time with automated marketing workflows that nurture leads 24/7.",
+  "service_seo": "Local & Global SEO",
+  "service_seo_desc": "Get found by customers searching for your products or services online.",
+  "view_all_services": "View All Services",
+  
+  "how_it_works_title": "How It Works",
+  "how_it_works_subtitle": "Our simple 3-step process to get your business online",
+  "step1_title": "Discovery & Strategy",
+  "step1_desc": "We'll discuss your business goals and create a customized digital strategy.",
+  "step2_title": "Design & Development",
+  "step2_desc": "Our team builds your digital assets with a focus on user experience and conversion.",
+  "step3_title": "Launch & Grow",
+  "step3_desc": "We'll help you launch and optimize your digital presence for maximum impact.",
+  
+  "cta_title": "Ready to Transform Your Digital Presence?",
+  "cta_subtitle": "Get started with a free consultation today.",
+  "cta_button": "Contact Us Now",
+  
+  "footer_about": "Helping businesses launch and automate their online presence with beautiful, effective digital solutions.",
+  "footer_quick_links": "Quick Links",
+  "footer_contact": "Contact Us",
+  "footer_newsletter": "Stay Updated",
+  "newsletter_placeholder": "Your email address",
+  "newsletter_button": "Subscribe",
+  "footer_copyright": "© 2025 Sleek. All rights reserved.",
+  
+  "back_to_top": "Back to top"
+}

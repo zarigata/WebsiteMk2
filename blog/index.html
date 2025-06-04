@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Sleek Digital Brand Acceleration. Latest insights and articles about digital marketing and web development.">
+    <title>Blog - Sleek</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Sleek Logo" class="logo-img">
+                <span class="logo-text">Sleek</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="../index.html" data-i18n="nav_home">Home</a>
+                <a href="../about.html" data-i18n="nav_about">About</a>
+                <a href="../services.html" data-i18n="nav_services">Services</a>
+                <a href="../projects.html" data-i18n="nav_projects">Projects</a>
+                <a href="../contact.html" data-i18n="nav_contact">Contact</a>
+                <a href="index.html" class="active" data-i18n="nav_blog">Blog</a>
+                <button id="language-toggle" class="btn btn-outline" aria-label="Toggle language">
+                    <span class="lang-en">عربي</span>
+                    <span class="lang-ar" style="display: none;">EN</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 data-i18n="blog_title">Our Blog</h1>
+            <p class="lead" data-i18n="blog_subtitle">Insights, tips, and news about digital marketing and web development</p>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Featured Post -->
+            <div class="featured-post">
+                <div class="featured-post-image">
+                    <img src="../assets/images/cat on coputer.png" alt="Featured Blog Post">
+                    <div class="post-category">
+                        <a href="#" data-i18n="blog_category_design">Web Design</a>
+                    </div>
+                </div>
+                <div class="featured-post-content">
+                    <div class="post-meta">
+                        <span class="post-date" data-i18n="blog_posted">Posted on</span>
+                        <time datetime="2025-06-01">June 1, 2025</time>
+                        <span class="post-author" data-i18n="blog_by">by</span>
+                        <a href="#" data-i18n="blog_author">Mohammed Al-Salem</a>
+                    </div>
+                    <h2><a href="the-future-of-web-design-in-2025.html" data-i18n="blog_featured_title">The Future of Web Design in 2025: Trends to Watch</a></h2>
+                    <p data-i18n="blog_featured_excerpt">Discover the latest web design trends that will shape the digital landscape in 2025 and beyond. From AI-powered designs to immersive experiences, learn how to stay ahead of the curve.</p>
+                    <a href="the-future-of-web-design-in-2025.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Blog Posts Grid -->
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <a href="seo-best-practices-2025.html">
+                            <img src="../assets/images/AI cat.png" alt="SEO Best Practices">
+                        </a>
+                        <div class="post-category">
+                            <a href="#" data-i18n="blog_category_seo">SEO</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="2025-05-25">May 25, 2025</time>
+                            <span>•</span>
+                            <span data-i18n="blog_5min_read">5 min read</span>
+                        </div>
+                        <h3><a href="seo-best-practices-2025.html" data-i18n="blog_post1_title">SEO Best Practices for 2025: What's Changed?</a></h3>
+                        <p data-i18n="blog_post1_excerpt">Stay ahead of the competition with these updated SEO best practices for 2025. Learn about the latest algorithm updates and optimization techniques.</p>
+                        <a href="seo-best-practices-2025.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <a href="social-media-strategies.html">
+                            <img src="../assets/images/influencer.png" alt="Social Media Strategies">
+                        </a>
+                        <div class="post-category">
+                            <a href="#" data-i18n="blog_category_social">Social Media</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="2025-05-18">May 18, 2025</time>
+                            <span>•</span>
+                            <span data-i18n="blog_7min_read">7 min read</span>
+                        </div>
+                        <h3><a href="social-media-strategies.html" data-i18n="blog_post2_title">5 Social Media Strategies That Actually Work in 2025</a></h3>
+                        <p data-i18n="blog_post2_excerpt">Discover the most effective social media strategies that are driving engagement and conversions for businesses this year.</p>
+                        <a href="social-media-strategies.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <a href="conversion-rate-optimization.html">
+                            <img src="../assets/images/cat presenting thing.png" alt="Conversion Rate Optimization">
+                        </a>
+                        <div class="post-category">
+                            <a href="#" data-i18n="blog_category_cro">CRO</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="2025-05-10">May 10, 2025</time>
+                            <span>•</span>
+                            <span data-i18n="blog_6min_read">6 min read</span>
+                        </div>
+                        <h3><a href="conversion-rate-optimization.html" data-i18n="blog_post3_title">The Ultimate Guide to Conversion Rate Optimization</a></h3>
+                        <p data-i18n="blog_post3_excerpt">Learn how to turn more visitors into customers with these proven conversion rate optimization techniques.</p>
+                        <a href="conversion-rate-optimization.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 4 -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <a href="email-marketing-trends.html">
+                            <img src="../assets/images/progrtamer.png" alt="Email Marketing Trends">
+                        </a>
+                        <div class="post-category">
+                            <a href="#" data-i18n="blog_category_email">Email Marketing</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="2025-05-03">May 3, 2025</time>
+                            <span>•</span>
+                            <span data-i18n="blog_8min_read">8 min read</span>
+                        </div>
+                        <h3><a href="email-marketing-trends.html" data-i18n="blog_post4_title">Email Marketing Trends You Can't Ignore in 2025</a></h3>
+                        <p data-i18n="blog_post4_excerpt">Discover the email marketing trends that are reshaping how businesses communicate with their audiences this year.</p>
+                        <a href="email-marketing-trends.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 5 -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <a href="content-marketing-strategy.html">
+                            <img src="../assets/images/Curious Green Cat with Question Mark.png" alt="Content Marketing Strategy">
+                        </a>
+                        <div class="post-category">
+                            <a href="#" data-i18n="blog_category_content">Content Marketing</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="2025-04-26">April 26, 2025</time>
+                            <span>•</span>
+                            <span data-i18n="blog_9min_read">9 min read</span>
+                        </div>
+                        <h3><a href="content-marketing-strategy.html" data-i18n="blog_post5_title">How to Build a Winning Content Marketing Strategy</a></h3>
+                        <p data-i18n="blog_post5_excerpt">A step-by-step guide to creating a content marketing strategy that drives traffic, engagement, and conversions.</p>
+                        <a href="content-marketing-strategy.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 6 -->
+                <article class="blog-post">
+                    <div class="post-image">
+                        <a href="mobile-first-design.html">
+                            <img src="../assets/images/cat on coputer.png" alt="Mobile-First Design">
+                        </a>
+                        <div class="post-category">
+                            <a href="#" data-i18n="blog_category_design">Web Design</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="2025-04-19">April 19, 2025</time>
+                            <span>•</span>
+                            <span data-i18n="blog_6min_read">6 min read</span>
+                        </div>
+                        <h3><a href="mobile-first-design.html" data-i18n="blog_post6_title">Why Mobile-First Design is More Important Than Ever</a></h3>
+                        <p data-i18n="blog_post6_excerpt">With mobile traffic continuing to grow, learn why a mobile-first approach is crucial for your website's success.</p>
+                        <a href="mobile-first-design.html" class="read-more" data-i18n="read_more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-numbers current" aria-label="Page 1">1</a>
+                <a href="#" class="page-numbers" aria-label="Page 2">2</a>
+                <a href="#" class="page-numbers" aria-label="Page 3">3</a>
+                <a href="#" class="next page-numbers" aria-label="Next page">
+                    <span data-i18n="next">Next</span> <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section bg-light">
+        <div class="container">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h3 data-i18n="newsletter_title">Subscribe to Our Newsletter</h3>
+                    <p data-i18n="newsletter_description">Get the latest digital marketing tips and insights delivered to your inbox.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" data-i18n-placeholder="newsletter_placeholder" required>
+                    <button type="submit" class="btn btn-primary" data-i18n="newsletter_button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="../index.html" class="logo">
+                        <img src="../assets/images/logo.png" alt="Sleek Logo" class="logo-img">
+                        <span class="logo-text">Sleek</span>
+                    </a>
+                    <p data-i18n="footer_about">Helping businesses launch and automate their online presence with beautiful, effective digital solutions.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-i18n="footer_quick_links">Quick Links</h4>
+                    <ul>
+                        <li><a href="../about.html" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="../services.html" data-i18n="nav_services">Services</a></li>
+                        <li><a href="../projects.html" data-i18n="nav_projects">Our Work</a></li>
+                        <li><a href="index.html" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="../contact.html" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 data-i18n="footer_contact">Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@getsleek.co</li>
+                        <li><i class="fas fa-phone"></i> +966 12 345 6789</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 data-i18n="footer_newsletter">Stay Updated</h4>
+                    <p data-i18n="newsletter_description">Subscribe to our newsletter for the latest updates and tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" data-i18n-placeholder="newsletter_placeholder" required>
+                        <button type="submit" class="btn btn-primary" data-i18n="newsletter_button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">© 2025 Sleek. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" data-i18n="back_to_top"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
